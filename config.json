@@ -1,8 +1,8 @@
 {
     "GameStateIntegrationPort":1337,
     "ServerPort":2626,
-    "SteamApiKey":"",
-    "DisplayAvatars":false,
+    "SteamApiKey":"955AD581D9E2C2F3A8B7EEB529A64A43",
+    "DisplayAvatars":true,
     "AvatarDirectory":"./public/files/avatars/",
     "GSIToken":"120987"
 }

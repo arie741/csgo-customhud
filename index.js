@@ -153,6 +153,15 @@ app.get('/av/:sid([0-9]+)', (req, res) => {
         });
     }
 });
+
+app.get('/ariehud', (req, res) => {
+    return res.render('ariehud', {
+        ip: config.Address,
+        port: config.ServerPort,
+        flags: getFlags()
+    });
+});
+
 io.on('connection', (socket) => {
     socket.on('update', (data) => {
         io.emit(data);

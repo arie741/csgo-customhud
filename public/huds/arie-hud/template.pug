@@ -1,0 +1,35 @@
+html
+  head
+    script(src="/socket.io/socket.io.js")
+    script(src="http://code.jquery.com/jquery-2.1.4.min.js")
+    script.
+      var ip = "#{ip}",
+      port = "#{port}",
+      disp_avatars = #{avatars},
+      delay = #{delay};
+    script(src="/js/main.js")
+    script(src=hud)
+    link(rel='stylesheet', href=css)
+  body
+    section
+      #teams
+        #team_one
+          #team_1_0.player_hud Player 1 
+          #team_1_1.player_hud Player 2 
+          #team_1_2.player_hud Player 3 
+          #team_1_3.player_hud Player 4 
+          #team_1_4.player_hud Player 5 
+        #team_two
+          #team_2_0.player_hud Player 1 
+          #team_2_1.player_hud Player 2 
+          #team_2_2.player_hud Player 3 
+          #team_2_3.player_hud Player 4 
+          #team_2_4.player_hud Player 5 
+      #win_animation
+        #ct_win(style='opacity:0;')
+          #ct_win_text COUNTER TERRORIST WIN
+          img(src='../../files/img/arie/CT.jpg', alt='')
+        #t_win(style='opacity:0;')
+          #t_win_text TERRORIST WIN
+          img(src='../../files/img/arie/T.jpg', alt='')
+
