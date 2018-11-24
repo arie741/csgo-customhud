@@ -19,4 +19,7 @@ html
 
 	body
 		.container
-			.div#arie
+			form(action='/ariehud', method='post').col.s12
+				input#asd(placeholder='Asd', type='text', name="name")
+				button(type='submit') Submit
+			div #{data}

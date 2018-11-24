@@ -162,6 +162,13 @@ app.get('/ariehud', (req, res) => {
     });
 });
 
+app.post('/ariehud', function(req, res){
+    var modified = req.body.name + "-ngentot"
+    return res.render('ariehud', {
+        data: modified
+    });
+});
+
 io.on('connection', (socket) => {
     socket.on('update', (data) => {
         io.emit(data);
