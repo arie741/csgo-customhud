@@ -1,6 +1,10 @@
 //Ariehud Vars
-var teamname = {one: "Lulteam", two:"The Omegaluls"}
+var teamname = {one: {name: "1Z Atlas",
+                      logo: "1Z_Atlas.png"}, 
+                two: {name: "Absolute 5",
+                     logo: "Absolute5.png"}}
 var matchpoints = {one: "5", two:"2"}
+var tplayers = {}
 //
 
 var teams = {
@@ -51,11 +55,11 @@ function fillObserved(player) {
         if (weapon.state == "active" || weapon.state == "reloading") {
             if (weapon.type == "Grenade" || weapon.type == "C4" || weapon.type == "Knife" || statistics.health == 0) {
 
-                $(".clip").html("");
-                $(".reserve").html("");
+                $(".chamber").html("");
+                $(".mag").html("");
             } else {
-                $(".clip").html(weapon.ammo_clip + "/");
-                $(".reserve").html(weapon.ammo_reserve);
+                $(".chamber").text(weapon.ammo_clip + " / ");
+                $(".mag").text(weapon.ammo_reserve);
             }
         }
     }
@@ -251,6 +255,9 @@ function updatePage(data) {
         //$("#match_tournament").hide();
     }
 
+    $("#team_1_logo").attr("src","/files/img/team/" + teamname.one.logo);
+    $("#team_2_logo").attr("src","/files/img/team/" + teamname.two.logo);
+
     $("#match_one_info").html(matchpoints.one);
     $("#match_two_info").html(matchpoints.two);
 
@@ -361,11 +368,11 @@ function updatePage(data) {
     $("#round_counter").html("Round " + round_now + " / 30");
     //TEAMS
 
-    $("#team_2 #team_name").html(teamname.two);
+    $("#team_2 #team_name").html(teamname.two.name);
     $("#team_2 #team_score").html(teams.right.score);
-    $("#team_1 #team_name").html(teamname.one);
+    $("#team_1 #team_name").html(teamname.one.name);
     $("#team_1 #team_score").html(teams.left.score);
-    if (teams.left.logo || teams.left.flag) {
+/*    if (teams.left.logo || teams.left.flag) {
         if (teams.left.flag) {
             $("#team_1 #team_logo #team_flag").css("background-image", "url('/files/img/flags/" + teams.left.flag + ".png')");
         }
@@ -389,6 +396,7 @@ function updatePage(data) {
         $("#team_2 #team_logo").addClass("empty");
         $("#team_2 #team_logo #team_flag").css("background-image", "");
     }
+*/
 
     //OBSERVED PLAYER
     if (observed && observed.steamid != 1 && observed.getStats()) {

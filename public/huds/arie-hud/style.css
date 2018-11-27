@@ -518,7 +518,7 @@
 		bottom: 0;
 	}
 	.equip_bar>.bar_weapon{
-		width:420px !important;
+		width:410px !important;
 	}
 
 	#right {
@@ -785,7 +785,7 @@
 		float: right;
 	}
 	#header {
-		width: 2000px;
+		width: 2600px;
 	    height: 250px;
 	    position: fixed;
 	    top: 0;
@@ -962,7 +962,7 @@
 
 	#kd_bar {
 		font-size:40px;
-		width:200px;
+		width:210px;
 	}
 
 	#kd_bar span{
@@ -1020,11 +1020,14 @@
 	#observed_username{
 		width:100%;
 		margin-top:30px;
-		font-size:80px;
+		font-size:70px;
 	}
 
 	#obstext {
 		float:left;
+		max-width:635px;
+		max-height:108px;
+		overflow:hidden;
 	}
 
 	#obsteamimg, #observed_bottombar .rk {
@@ -1100,4 +1103,54 @@
 
 	#obs_armor {
 		margin-left:30px;
+	}
+
+	#observed_ammo {
+		position:fixed;
+		bottom:0;
+		right:0;
+		width:1000px;
+		height:160px;
+		background: linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+	}
+
+	#observed_ammo > * {
+		float:right;
+	}
+
+	#observed_ammo .text .chamber {
+		font-size:110px;
+	}
+
+	#observed_ammo .text .mag {
+		font-size:60px;
+	}
+
+	#team_1_logo, #team_logo, #team_2_logo {
+		width:190px;
+	}
+
+	#eventslogo #logo_left {
+		position:fixed;
+		right:100px;
+		bottom:1320px;
+	}
+
+	#eventslogo #logo_left img{
+		height:380px;
+	}
+
+	#eventslogo #logo_bottom {
+		position:fixed;
+		right:1507px;
+		bottom:0px;
+		width:800px;
+		background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+	}
+
+	#eventslogo #logo_bottom img{
+		height:180px;
+		margin-left:auto;
+		margin-right:auto;
+		display:block;
 	}
