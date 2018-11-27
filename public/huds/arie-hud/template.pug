@@ -12,24 +12,205 @@ html
     link(rel='stylesheet', href=css)
   body
     section
-      #teams
-        #team_one
-          #team_1_0.player_hud Player 1 
-          #team_1_1.player_hud Player 2 
-          #team_1_2.player_hud Player 3 
-          #team_1_3.player_hud Player 4 
-          #team_1_4.player_hud Player 5 
-        #team_two
-          #team_2_0.player_hud Player 1 
-          #team_2_1.player_hud Player 2 
-          #team_2_2.player_hud Player 3 
-          #team_2_3.player_hud Player 4 
-          #team_2_4.player_hud Player 5 
-      #win_animation
-        #ct_win(style='opacity:0;')
-          #ct_win_text COUNTER TERRORIST WIN
-          img(src='../../files/img/arie/CT.jpg', alt='')
-        #t_win(style='opacity:0;')
-          #t_win_text TERRORIST WIN
-          img(src='../../files/img/arie/T.jpg', alt='')
-
+      #header
+        #match_teams
+          #round_info(style='height: 100%;')
+            #team_1.team_info(style='height: 100%;')
+              #team_score 0
+              #team_logo
+                #team_flag
+                img#team_1_logo
+              #team_name Team 1
+            #team_2.team_info(style='height: 100%;')
+              #team_score 0
+              #team_logo
+                #team_flag
+                img#team_2_logo
+              #team_name Team 2
+            #time_counter 1:55
+            #round_counter Round 0 / 30
+        #match_tournament
+          div(style='margin:auto; width:70%')
+            #match_one_info 0
+            #match_two_info 0
+            #match_info Match Points
+      #observed_player
+        #obs_left
+          #observed_img
+        #obs_right
+          #observed_username
+            #obstext NICKNAME
+            #obsteamimg 
+              img(src="/files/img/flags/indonesia.png")
+          #observed_name 
+            #observed_country 
+              img(src="/files/img/flags/indonesia.png")
+            span NAME
+          #observed_bottombar
+            span.sk K 0 
+            span.sd D 0
+            span.rk
+            img#obs_death(src="/files/img/death.png")
+      #left.team
+        #player1.player
+          .bar1
+            .hp_bar
+              #hp_p.hp_el 100
+              #bar_username.bar_username undefined
+              #weapon_icon.bar_weapon.ct 
+          .bottom_bar
+            .equip_bar
+              .hp_el 
+              .bomb_defuse.ct
+                img.invert_brightness(src='/files/img/elements/defuse.png')
+              #kd_bar
+                span.sk
+                span.sd
+              #weapon_icon.bar_weapon.ct 
+        #player2.player
+          .bar1
+            .hp_bar
+              #hp_p.hp_el 100
+              #bar_username.bar_username undefined
+              #weapon_icon.bar_weapon.ct 
+          .bottom_bar
+            .equip_bar
+              .hp_el 
+              .bomb_defuse.ct
+                img.invert_brightness(src='/files/img/elements/defuse.png')
+              #kd_bar
+                span.sk
+                span.sd
+              #weapon_icon.bar_weapon.ct 
+        #player3.player
+          .bar1
+            .hp_bar
+              #hp_p.hp_el 100
+              #bar_username.bar_username undefined
+              #weapon_icon.bar_weapon.ct 
+          .bottom_bar
+            .equip_bar
+              .hp_el 
+              .bomb_defuse.ct
+                img.invert_brightness(src='/files/img/elements/defuse.png')
+              #kd_bar
+                span.sk
+                span.sd
+              #weapon_icon.bar_weapon.ct 
+        #player4.player
+          .bar1
+            .hp_bar
+              #hp_p.hp_el 100
+              #bar_username.bar_username undefined
+              #weapon_icon.bar_weapon.ct 
+          .bottom_bar
+            .equip_bar
+              .hp_el 
+              .bomb_defuse.ct
+                img.invert_brightness(src='/files/img/elements/defuse.png')
+              #kd_bar
+                span.sk
+                span.sd
+              #weapon_icon.bar_weapon.ct 
+        #player5.player
+          .bar1
+            .hp_bar
+              #hp_p.hp_el 100
+              #bar_username.bar_username undefined
+              #weapon_icon.bar_weapon.ct 
+          .bottom_bar
+            .equip_bar
+              .hp_el 
+              .bomb_defuse.ct
+                img.invert_brightness(src='/files/img/elements/defuse.png')
+              #kd_bar
+                span.sk
+                span.sd
+              #weapon_icon.bar_weapon.ct 
+      #right.team
+        #player1.player
+          .bar1
+            .hp_bar
+              #hp_p.hp_el 100
+              #bar_username.bar_username undefined
+              #weapon_icon.bar_weapon.t 
+          .bottom_bar
+            .equip_bar
+              .hp_el  
+              .bomb_defuse.t
+                img.invert_brightness(src='/files/img/elements/bomb.png')
+              #kd_bar
+                span.sk
+                span.sd
+              #weapon_icon.bar_weapon.t 
+        #player2.player
+          .bar1
+            .hp_bar
+              #hp_p.hp_el 100
+              #bar_username.bar_username undefined
+              #weapon_icon.bar_weapon.t 
+          .bottom_bar
+            .equip_bar
+              .hp_el  
+              .bomb_defuse.t
+                img.invert_brightness(src='/files/img/elements/bomb.png')
+              #kd_bar
+                span.sk
+                span.sd
+              #weapon_icon.bar_weapon.t 
+        #player3.player
+          .bar1
+            .hp_bar
+              #hp_p.hp_el 100
+              #bar_username.bar_username undefined
+              #weapon_icon.bar_weapon.t 
+          .bottom_bar
+            .equip_bar
+              .hp_el  
+              .bomb_defuse.t
+                img.invert_brightness(src='/files/img/elements/bomb.png')
+              #kd_bar
+                span.sk
+                span.sd
+              #weapon_icon.bar_weapon.t 
+        #player4.player
+          .bar1
+            .hp_bar
+              #hp_p.hp_el 100
+              #bar_username.bar_username undefined
+              #weapon_icon.bar_weapon.t 
+          .bottom_bar
+            .equip_bar
+              .hp_el  
+              .bomb_defuse.t
+                img.invert_brightness(src='/files/img/elements/bomb.png')
+              #kd_bar
+                span.sk
+                span.sd
+              #weapon_icon.bar_weapon.t 
+        #player5.player
+          .bar1
+            .hp_bar
+              #hp_p.hp_el 100
+              #bar_username.bar_username undefined
+              #weapon_icon.bar_weapon.t 
+          .bottom_bar
+            .equip_bar
+              .hp_el  
+              .bomb_defuse.t
+                img.invert_brightness(src='/files/img/elements/bomb.png')
+              #kd_bar
+                span.sk
+                span.sd
+              #weapon_icon.bar_weapon.t 
+      #observed_health
+        #obs_hp
+          img(src="/files/img/hp.png")
+          .text 100
+          .bar
+            .fill
+        #obs_armor
+          img(src="/files/img/helmet.png")
+          .text 100
+          .bar
+            .fill

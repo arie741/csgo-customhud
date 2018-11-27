@@ -163,9 +163,8 @@ app.get('/ariehud', (req, res) => {
 });
 
 app.post('/ariehud', function(req, res){
-    var modified = req.body.name + "-ngentot"
     return res.render('ariehud', {
-        data: modified
+        data: JSON.stringify(req.body)
     });
 });
 

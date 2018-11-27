@@ -20,6 +20,7 @@ html
 	body
 		.container
 			form(action='/ariehud', method='post').col.s12
-				input#asd(placeholder='Asd', type='text', name="name")
+				input#asd1(placeholder='Asd', type='text', name='name')
+				input#asd2(type='file', name='file')
 				button(type='submit') Submit
 			div #{data}
