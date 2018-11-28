@@ -57,9 +57,11 @@ function fillObserved(player) {
 
                 $(".chamber").html("");
                 $(".mag").html("");
+                $("#observed_ammo img").attr("style", "display:none");
             } else {
                 $(".chamber").text(weapon.ammo_clip + " / ");
                 $(".mag").text(weapon.ammo_reserve);
+                $("#observed_ammo img").attr("style", "display:block");
             }
         }
     }
@@ -78,6 +80,7 @@ function fillObserved(player) {
     $("#obs_left").html($("<img />").attr("src", "/av/"+player.steamid));
     $("#observed_username #obstext").text(player.name);
     $("#observed_bottombar .sk").html("<strong>K </strong>" + statistics.kills);
+    $("#observed_bottombar .sa").html("<strong>A </strong> " + statistics.assists);
     $("#observed_bottombar .sd").html("<strong>D </strong> " + statistics.deaths);
     $("#observed_bottombar .rk").text("X " + statistics.round_kills);
 
@@ -145,6 +148,7 @@ function fillPlayer(player,nr, side, max){
 //    $bottom.find(".assists").text(statistics.assists);
 //    $bottom.find(".deaths").text(statistics.deaths);
     $bottom.find("#kd_bar .sk").html("<strong>K </strong>" + statistics.kills);
+    $bottom.find("#kd_bar .sa").html("<strong>A </strong>" + statistics.assists);
     $bottom.find("#kd_bar .sd").html("<strong>D </strong>" + statistics.deaths);
 
     $bottom.find(".hp_el").html(statistics.helmet ? $("<img />").attr("src", "/files/img/helmet.png") : statistics.armor > 0 ? $("<img />").attr("src", "/files/img/armor.png") : "");
@@ -308,10 +312,10 @@ function updatePage(data) {
 
         if(teams.left.score !== undefined && teams.right.score !== undefined){
             if(left.score > teams.left.score){
-                $("#winning_team").text(teams.left.name).removeClass("t-color ct-color").addClass(teams.left.side.toLowerCase() + "-color");
+                $("#winning_team").text(teamname.one.name).removeClass("t-color ct-color").addClass(teams.left.side.toLowerCase() + "-color");
                 $("#who_won").fadeTo(1000, 1).delay(2000).fadeTo(1000, 0);
             } else if(right.score > teams.right.score){
-                $("#winning_team").text(teams.right.name).removeClass("t-color ct-color").addClass(teams.right.side.toLowerCase() + "-color");
+                $("#winning_team").text(teamname.two.name).removeClass("t-color ct-color").addClass(teams.right.side.toLowerCase() + "-color");
                 $("#who_won").fadeTo(1000, 1).delay(2000).fadeTo(1000, 0);
             }
         }

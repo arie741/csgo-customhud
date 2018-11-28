@@ -48,6 +48,7 @@ html
             span NAME
           #observed_bottombar
             span.sk K 0 
+            span.sa A 0
             span.sd D 0
             span.rk
             img#obs_death(src="/files/img/death.png")
@@ -65,6 +66,7 @@ html
                 img.invert_brightness(src='/files/img/elements/defuse.png')
               #kd_bar
                 span.sk
+                span.sa
                 span.sd
               #weapon_icon.bar_weapon.ct 
         #player2.player
@@ -80,6 +82,7 @@ html
                 img.invert_brightness(src='/files/img/elements/defuse.png')
               #kd_bar
                 span.sk
+                span.sa
                 span.sd
               #weapon_icon.bar_weapon.ct 
         #player3.player
@@ -95,6 +98,7 @@ html
                 img.invert_brightness(src='/files/img/elements/defuse.png')
               #kd_bar
                 span.sk
+                span.sa
                 span.sd
               #weapon_icon.bar_weapon.ct 
         #player4.player
@@ -110,6 +114,7 @@ html
                 img.invert_brightness(src='/files/img/elements/defuse.png')
               #kd_bar
                 span.sk
+                span.sa
                 span.sd
               #weapon_icon.bar_weapon.ct 
         #player5.player
@@ -125,6 +130,7 @@ html
                 img.invert_brightness(src='/files/img/elements/defuse.png')
               #kd_bar
                 span.sk
+                span.sa
                 span.sd
               #weapon_icon.bar_weapon.ct 
       #right.team
@@ -141,6 +147,7 @@ html
                 img.invert_brightness(src='/files/img/elements/bomb.png')
               #kd_bar
                 span.sk
+                span.sa
                 span.sd
               #weapon_icon.bar_weapon.t 
         #player2.player
@@ -156,6 +163,7 @@ html
                 img.invert_brightness(src='/files/img/elements/bomb.png')
               #kd_bar
                 span.sk
+                span.sa
                 span.sd
               #weapon_icon.bar_weapon.t 
         #player3.player
@@ -171,6 +179,7 @@ html
                 img.invert_brightness(src='/files/img/elements/bomb.png')
               #kd_bar
                 span.sk
+                span.sa
                 span.sd
               #weapon_icon.bar_weapon.t 
         #player4.player
@@ -186,6 +195,7 @@ html
                 img.invert_brightness(src='/files/img/elements/bomb.png')
               #kd_bar
                 span.sk
+                span.sa
                 span.sd
               #weapon_icon.bar_weapon.t 
         #player5.player
@@ -201,6 +211,7 @@ html
                 img.invert_brightness(src='/files/img/elements/bomb.png')
               #kd_bar
                 span.sk
+                span.sa
                 span.sd
               #weapon_icon.bar_weapon.t 
       #observed_health
@@ -215,7 +226,7 @@ html
           .bar
             .fill
       #observed_ammo
-        img(src="/files/img/ammo.png")
+        img(src="/files/img/ammo.png" style="display:none")
         .text 
           span.chamber 
           span.mag 
@@ -224,3 +235,12 @@ html
           img(src="/files/img/IEG_Logo.png")
         #logo_bottom
           img(src="/files/img/Logo_PKPI.png")
+      #defuser
+        #defuser_title
+          | DEFUSE TIME
+        #defuse_bar
+        #defuse_time
+          | 10:00
+      #who_won
+        #winning_team
+        div win the round!
