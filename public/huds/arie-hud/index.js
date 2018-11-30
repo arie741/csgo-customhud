@@ -3,9 +3,9 @@ var teamname = {one: {name: "1Z Atlas",
                       logo: "1Z_Atlas.png"}, 
                 two: {name: "Absolute 5",
                      logo: "Absolute5.png"}}
-var matchpoints = {one: "5", two:"2"}
-var tplayers = [{"nickname": "Misutaaa", "name": "Eliandy Andojoputro", "foto": ""},
-                {"nickname": "zen", "name": "Jowo Widodo", "foto": ""}]
+var matchpoints = {one: "0", two:"0"}
+var tplayers = [{"nickname": "Waltercs1", "name": "Eliandy Andojoputro", "foto": ""},
+                {"nickname": "Boi", "name": "Jowo Widodo", "foto": ""}]
 //
 
 var teams = {
@@ -83,8 +83,10 @@ function fillObserved(player) {
     var realname = "";
 
     if(tplayers.find(x => x.nickname === player.name) !== undefined){
+        $("#observed_country img").attr("style", "opacity:1");
         var realname = tplayers.find(x => x.nickname === player.name).name;
     } else {
+        $("#observed_country img").attr("style", "opacity:0");
         var realname = "";
     }
 
@@ -93,6 +95,7 @@ function fillObserved(player) {
     $("#observed_bottombar .sa").html("<strong>A </strong> " + statistics.assists);
     $("#observed_bottombar .sd").html("<strong>D </strong> " + statistics.deaths);
     $("#observed_bottombar .rk").text("X " + statistics.round_kills);
+    //$("#obsteamimg img").attr("src", "/teams/" + player);
 
     $("#obs_hp .text").text(statistics.health);
     $("#obs_hp .bar .fill").attr("style", "width:" + statistics.health + "%");
@@ -253,15 +256,19 @@ function updatePage(data) {
     var matchup = data.getMatchType();
     var match = data.getMatch();
     if(matchup && matchup.toLowerCase() != "none"){
+        $("#match_one_info").html(match.team_1.map_score);
+        $("#match_two_info").html(match.team_2.map_score);
+        /*
         var block = $("<div class='block'></div>");
         var left_bl = $("<div></div>");
-        var right_bl = $("<div></div>");
+        var right_bl = $("<div></div>");        
         for(var x = 0; x < (matchup == "bo5" ? 3 : 2); x ++){
             block.clone().appendTo($(left_bl)).addClass(match.team_1.map_score > x ? "win" : "");
             block.clone().appendTo(right_bl).addClass(match.team_2.map_score > x ? "win" : "");
         }
         $("#match_one_info").html(left_bl);
         $("#match_two_info").html(right_bl);
+        */
         
         $("#match_tournament").show();
         $("#match_info").text("Best Of " + matchup.substr(2));
@@ -269,11 +276,9 @@ function updatePage(data) {
         //$("#match_tournament").hide();
     }
 
-    $("#team_1_logo").attr("src","/files/img/team/" + teamname.one.logo);
-    $("#team_2_logo").attr("src","/files/img/team/" + teamname.two.logo);
-
-    $("#match_one_info").html(matchpoints.one);
-    $("#match_two_info").html(matchpoints.two);
+    //$("#team_1_logo").attr("src","/files/img/team/" + teamname.one.logo);
+    //$("#team_2_logo").attr("src","/files/img/team/" + teamname.two.logo);
+    
 
     if (observed.steamid == 1 || !observed) {
         $("#player-container").css("opacity", "0");
@@ -322,10 +327,10 @@ function updatePage(data) {
 
         if(teams.left.score !== undefined && teams.right.score !== undefined){
             if(left.score > teams.left.score){
-                $("#winning_team").text(teamname.one.name).removeClass("t-color ct-color").addClass(teams.left.side.toLowerCase() + "-color");
+                $("#winning_team").text(teams.left.name).removeClass("t-color ct-color").addClass(teams.left.side.toLowerCase() + "-color");
                 $("#who_won").fadeTo(1000, 1).delay(2000).fadeTo(1000, 0);
             } else if(right.score > teams.right.score){
-                $("#winning_team").text(teamname.two.name).removeClass("t-color ct-color").addClass(teams.right.side.toLowerCase() + "-color");
+                $("#winning_team").text(teams.right.name).removeClass("t-color ct-color").addClass(teams.right.side.toLowerCase() + "-color");
                 $("#who_won").fadeTo(1000, 1).delay(2000).fadeTo(1000, 0);
             }
         }
@@ -382,11 +387,11 @@ function updatePage(data) {
     $("#round_counter").html("Round " + round_now + " / 30");
     //TEAMS
 
-    $("#team_2 #team_name").html(teamname.two.name);
+    $("#team_2 #team_name").html(teams.right.name);
     $("#team_2 #team_score").html(teams.right.score);
-    $("#team_1 #team_name").html(teamname.one.name);
+    $("#team_1 #team_name").html(teams.left.name);
     $("#team_1 #team_score").html(teams.left.score);
-/*    if (teams.left.logo || teams.left.flag) {
+    if (teams.left.logo || teams.left.flag) {
         if (teams.left.flag) {
             $("#team_1 #team_logo #team_flag").css("background-image", "url('/files/img/flags/" + teams.left.flag + ".png')");
         }
@@ -410,7 +415,7 @@ function updatePage(data) {
         $("#team_2 #team_logo").addClass("empty");
         $("#team_2 #team_logo #team_flag").css("background-image", "");
     }
-*/
+
 
     //OBSERVED PLAYER
     if (observed && observed.steamid != 1 && observed.getStats()) {

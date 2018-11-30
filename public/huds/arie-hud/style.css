@@ -952,7 +952,7 @@
 		height: 160px;
 		margin-left: -1029px;
 		left: 50%;
-		top: 1000px;
+		top: 304px;
 		width: 2000px;
 		text-align: center;
 		font-size: 100px;
@@ -1052,6 +1052,7 @@
 	
 	#observed_country img{
 		margin-right:3px;
+		opacity:0;
 	}
 
 	#observed_bottombar {
