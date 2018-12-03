@@ -18,6 +18,7 @@ function fillObserved(player) {
     let statistics = player.getStats();
     let weapons = player.weapons;
     let right = false;
+    let nades = player.getGrenades();
 
     if (player.observer_slot >= 1 && player.observer_slot <= 5) {
         right = true;
@@ -83,10 +84,8 @@ function fillObserved(player) {
     var realname = "";
 
     if(tplayers.find(x => x.nickname === player.name) !== undefined){
-        $("#observed_country img").attr("style", "opacity:1");
         var realname = tplayers.find(x => x.nickname === player.name).name;
     } else {
-        $("#observed_country img").attr("style", "opacity:0");
         var realname = "";
     }
 
@@ -94,7 +93,14 @@ function fillObserved(player) {
     $("#observed_bottombar .sk").html("<strong>K </strong>" + statistics.kills);
     $("#observed_bottombar .sa").html("<strong>A </strong> " + statistics.assists);
     $("#observed_bottombar .sd").html("<strong>D </strong> " + statistics.deaths);
-    $("#observed_bottombar .rk").text("X " + statistics.round_kills);
+    $("#observed_bottombar .sm").text("$ " + statistics.money);
+    if (player.team == "CT"){
+        $("#observed_border").attr("style", "border-color:#73afd6");
+        $("#obs_left img").attr("style", "border-color:#73afd6");
+    } else if (player.team == "T"){
+        $("#observed_border").attr("style", "border-color:#c19511;");
+        $("#obs_left img").attr("style", "border-color:#c19511");
+    }
     //$("#obsteamimg img").attr("src", "/teams/" + player);
 
     $("#obs_hp .text").text(statistics.health);
@@ -273,7 +279,7 @@ function updatePage(data) {
         $("#match_tournament").show();
         $("#match_info").text("Best Of " + matchup.substr(2));
     } else {
-        //$("#match_tournament").hide();
+        $("#match_tournament").hide();
     }
 
     //$("#team_1_logo").attr("src","/files/img/team/" + teamname.one.logo);
@@ -459,11 +465,23 @@ function updatePage(data) {
                     isDefusing = true;
                 }
                 var seconds = Math.round(parseFloat(phase.phase_ends_in).toFixed(1));
-                $("#defuse_bar").css("width", 350 * (parseFloat(phase.phase_ends_in) / longd) + "px");
+                $("#defuse_bar").css("width", 374 * (parseFloat(phase.phase_ends_in) / longd) + "px");
                 $("#defuse_time").text("00:" + (seconds < 10 ? "0" + seconds : seconds));
             }
         } else {
             resetBomb();
+        }
+        if (phase.phase == "timeout_t" || phase.phase == "timeout_ct"){
+            if(phase.phase == "timeout_t"){
+                $("#timeout").html("<strong class='t-color'>" + team_t.name + " </strong> timeout");
+            } else if (phase.phase == "timeout_ct") {
+                $("#timeout").html("<strong class='ct-color'>" + team_ct.name + " </strong> timeout");
+            } else {
+                $("#timeout").text("Timeout");
+            }
+            $("#timeout").attr("style", "opacity: 1");
+        } else {
+            $("#timeout").attr("style", "opacity: 0");
         }
 
         if (phase.phase == "freezetime" || phase.phase.substring(0,7) == "timeout") {
@@ -472,7 +490,6 @@ function updatePage(data) {
                     $(".money").fadeTo(1000, 1);
                     $("#stats-container").fadeTo(1000,1);
                     $(".stat_t").fadeTo(1000, 1);
-
                 }
             } else {
                 if ($(".money").css("opacity") == 1) {

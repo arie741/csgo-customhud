@@ -10,13 +10,12 @@
 		background-color: rgba(0, 0, 0, 0);
 	}
 	#defuser {
-	  width:396px;
+	  width:510px;
 	  height:178px;
 	  background-image:url("/files/img/elements/defusing.png");
 	  position:absolute;
-	  left:-208px;
-	  margin-left:50%;
-	  bottom:220px;
+	  left: 696px;
+	  bottom: 240px;
 	}
 #defuser_title{
   position:absolute;
@@ -27,7 +26,7 @@
 }
 #defuse_bar{
 	background:red;
-	width:263px;
+	width:374px;
 	position:absolute;
 	height:10px;
 	left:133px;
@@ -520,7 +519,7 @@
 		bottom: 0;
 	}
 	.equip_bar>.bar_weapon{
-		width:160px !important;
+		width:152px !important;
 	}
 
 	#right {
@@ -789,11 +788,11 @@
 		float: right;
 	}
 	#header {
-		width: 975px;
+		width: 1500px;
 	    height: 93.75px;
 	    position: fixed;
 	    top: 0;
-	    left: 455px;
+	    left: 210px;
 	}
 
 	#match_tournament {
@@ -951,10 +950,9 @@
 		display: none;
 		position: absolute;
 		height: 80px;
-		margin-left: -515px;
-		left: 50%;
+		left: 210px;
 		top: 150px;
-		width: 1000px;
+		width: 1500px;
 		text-align: center;
 		font-size: 50px;
 		background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0))
@@ -965,7 +963,7 @@
 
 	#kd_bar {
 		font-size:12px;
-		width:70.8px;
+		width:80px;
 	}
 
 	#kd_bar span{
@@ -982,7 +980,7 @@
 
 	.death_big {
 		width:37.5px;
-		margin-top:9px;
+		margin-top:4px;
 	}
 
 	#observed_player .t #observed_username{
@@ -994,11 +992,11 @@
 	}
 
 	#observed_player {
-		width: 375px;
-		height: 131.25px;
+		width: 488px;
+		height: 127px;
 		position: fixed;
 		bottom: 100px;
-		left: 772.5px;
+		left: 716px;
 		background-color: rgba(0, 0, 0, 0.3);
 	}
 
@@ -1009,7 +1007,8 @@
 
 	#obs_left img{
         width:80%;
-		margin:40px 11.25px 0 11.25px;
+		margin:0;
+		border:5px solid;
 	}
 
 	#obs_right {
@@ -1017,7 +1016,7 @@
 		width:70%;
 	}
 
-	#observed_name, #observed_country, #observed_bottombar {
+	#observed_name, #observed_country, #observed_bottombar, #observed_border {
 		float:left;
 	}
 
@@ -1034,7 +1033,7 @@
 		overflow:hidden;
 	}
 
-	#obsteamimg, #observed_bottombar .rk {
+	#obsteamimg, #observed_bottombar .rk, #observed_bottombar .sm {
 		float:right;		
 	}
 
@@ -1043,31 +1042,43 @@
 	}
     
     #obsteamimg img{
+    	opacity:0;
 		width:70%;
 	}
 
-	#observed_bottombar .rk {
+	#observed_bottombar .rk, #observed_bottombar .sm {
 		margin-top:0px;
 		margin-right:10px;
+	}
+
+	#observed_bottombar .sm {
+		color:#add28b;
 	}
 
 	#observed_name{
 		width:100%;
 		font-size:18.75px;
+		height:33px;
 	}
 	
 	#observed_country img{
         width:70%;
 		margin-right:1.5px;
-		opacity:0;
+	}
+
+	#observed_border {
+		border-image-slice: 1;
+        border-width: 2px;
+		border-top:10px solid;
+		width: 365px;
+		margin-left: -24px;
 	}
 
 	#observed_bottombar {
 		padding-top:10px;
 		font-size:15px;
-		height:33.5px;
-		width:100%;
-		background: linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+		height:27.5px;
+		width:100%;		
 	}
 	
 	#observed_bottombar .sk, #observed_bottombar .sa {
@@ -1085,6 +1096,7 @@
 		padding:2.5px 0 2.5px 15px;
 		position:fixed;
 		bottom:0px;
+		left:0px;
 		float:left;
 		width:650px;
 		background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
@@ -1178,4 +1190,16 @@
 
 	.win_img {
 		height:110px;
+	}
+
+	#timeout {
+		width:1500px;
+		height:80px;
+		position: absolute;
+		left: 210px;
+		top: 350px;
+		text-align: center;
+		font-size: 50px;
+		color:#fff;
+		background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0))
 	}

@@ -12,6 +12,8 @@ html
     link(rel='stylesheet', href=css)
   body
     section
+      #bomb_timer
+      #timeout timeout        
       #header
         #match_teams
           #round_info(style='height: 100%;')
@@ -29,7 +31,7 @@ html
               #team_name Team 2
             #time_counter 1:55
             #round_counter Round 0 / 30
-        //#match_tournament
+        #match_tournament
           div(style='margin:auto; width:70%')
             #match_one_info 0
             #match_two_info 0
@@ -39,19 +41,19 @@ html
           #observed_img
         #obs_right
           #observed_username
+            #observed_country 
+              img(src="/files/img/flags/indonesia.png")
             #obstext NICKNAME
             #obsteamimg 
               img(src="/files/img/flags/indonesia.png")
           #observed_name 
-            #observed_country 
-              img(src="/files/img/flags/indonesia.png")
             span NAME
+          #observed_border
           #observed_bottombar
             span.sk K 0 
             span.sa A 0
             span.sd D 0
-            span.rk
-            img#obs_death(src="/files/img/death.png")
+            strong.sm
       #left.team
         #player1.player
           .bar1
