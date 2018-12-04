@@ -5,7 +5,7 @@ var teamname = {one: {name: "1Z Atlas",
                      logo: "Absolute5.png"}}
 var matchpoints = {one: "0", two:"0"}
 var tplayers = [{"nickname": "Waltercs1", "name": "Eliandy Andojoputro", "foto": ""},
-                {"nickname": "Boi", "name": "Jowo Widodo", "foto": ""}]
+                {"nickname": "Easy", "name": "Jowo Widodo", "foto": ""}]
 //
 
 var teams = {
@@ -102,7 +102,21 @@ function fillObserved(player) {
         $("#obs_left img").attr("style", "border-color:#c19511");
     }
     //$("#obsteamimg img").attr("src", "/teams/" + player);
+    var kf_element = "";
+    for (i = 0; i <= statistics.round_kills; i++){
+        if(i == 0){
+            kf_element = "";
+        } else {
+            kf_element += "<img src='/files/img/death.png'>";
+        }
+    }
 
+    var nadeslist = "";
+    for(i = 0; i < nades.length; i++){
+        nadeslist += "<img class='invert' src='/files/img/grenades/" + nades[i].name + ".png'> ";
+    }
+    $("#obs_nades").html(nadeslist);
+    $("#observed_killfeed").html(kf_element);
     $("#obs_hp .text").text(statistics.health);
     $("#obs_hp .bar .fill").attr("style", "width:" + statistics.health + "%");
     $("#obs_armor .text").text(statistics.armor);

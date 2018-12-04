@@ -1022,8 +1022,9 @@
 
 	#observed_username{
 		width:100%;
-		margin-top:-2.75px;
 		font-size:26.25px;
+		height:37px;
+		padding-top:10px;
 	}
 
 	#obstext {
@@ -1057,13 +1058,34 @@
 
 	#observed_name{
 		width:100%;
-		font-size:18.75px;
-		height:33px;
+		font-size:14px;
+		height:27px;
+		padding-bottom:10px;
+		margin-top:-12px;
+	}
+
+	#observed_name span{
+		float:left;
+		width:60%;
+	}
+
+	#obs_nades {
+		width:30%;
+		height:27px;
+		float:right;
+		margin-right:25px;
+	}
+
+	#obs_nades img {
+		height:20px;
+		float:right;
+		margin:3px 3px 3px 3px;
 	}
 	
 	#observed_country img{
-        width:70%;
-		margin-right:1.5px;
+        height:30px;
+		margin-right:10px;
+		margin-top:6px;
 	}
 
 	#observed_border {
@@ -1085,10 +1107,20 @@
 		margin-right:20px;
 	}
 
-	#obs_death {
-		height:30px;
+	#observed_killfeed {
+		height:127px;
+		width:35px;
+		margin-left:10px;
+		background-color: rgba(0, 0, 0, 0.3);
+		bottom: 100px;
+		left: 1204px;
+		position: absolute;
+	}	
+
+	#observed_killfeed img {
+		height:25px;
 		float:right;
-        margin-top:-2px;
+		margin-right: 6px;
 	}
 
 	#observed_health {
