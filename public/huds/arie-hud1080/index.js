@@ -5,7 +5,7 @@ var teamname = {one: {name: "1Z Atlas",
                      logo: "Absolute5.png"}}
 var matchpoints = {one: "0", two:"0"}
 var tplayers = [{"nickname": "Waltercs1", "name": "Eliandy Andojoputro", "foto": ""},
-                {"nickname": "Easy", "name": "Jowo Widodo", "foto": ""}]
+                {"nickname": "Easy", "name": "Jow", "foto": ""}]
 //
 
 var teams = {
@@ -81,15 +81,8 @@ function fillObserved(player) {
     //ariehud
     $("#obs_left").html($("<img />").attr("src", "/av/"+player.steamid));
     $("#observed_username #obstext").text(player.name);
-    var realname = "";
 
-    if(tplayers.find(x => x.nickname === player.name) !== undefined){
-        var realname = tplayers.find(x => x.nickname === player.name).name;
-    } else {
-        var realname = "";
-    }
-
-    $("#observed_name span").text(realname);
+    $("#observed_name span").text(player.real_name);
     $("#observed_bottombar .sk").html("<strong>K </strong>" + statistics.kills);
     $("#observed_bottombar .sa").html("<strong>A </strong> " + statistics.assists);
     $("#observed_bottombar .sd").html("<strong>D </strong> " + statistics.deaths);
