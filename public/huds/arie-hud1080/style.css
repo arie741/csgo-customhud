@@ -791,7 +791,7 @@
 		width: 1500px;
 	    height: 93.75px;
 	    position: fixed;
-	    top: 10;
+	    top: 12px;
 	    left: 210px;
 	}
 
@@ -1029,8 +1029,8 @@
 
 	#obstext {
 		float:left;
-		max-width:205px;
-		max-height:81px;
+		width:205px;
+		height:44px;
 		overflow:hidden;
 	}
 
@@ -1039,7 +1039,7 @@
 	}
 
 	#obsteamimg{
-		margin-right:-15.5px;
+		margin-right:1.5px;
 	}
     
     #obsteamimg img{
