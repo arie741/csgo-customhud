@@ -788,11 +788,11 @@
 		float: right;
 	}
 	#header {
-		width: 1500px;
+		width: 1300px;
 	    height: 93.75px;
 	    position: fixed;
 	    top: 12px;
-	    left: 210px;
+	    left: 310px;
 	}
 
 	#match_tournament {
@@ -1067,6 +1067,8 @@
 	#observed_name span{
 		float:left;
 		width:60%;
+		overflow:hidden;
+		height:100%;
 	}
 
 	#obs_nades {
