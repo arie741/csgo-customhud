@@ -1220,6 +1220,7 @@
 		margin-left:auto;
 		margin-right:auto;
 		display:block;
+		opacity:0;
 	}
 
 	.win_img {
